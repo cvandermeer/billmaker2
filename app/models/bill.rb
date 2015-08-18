@@ -4,8 +4,6 @@ class Bill < ActiveRecord::Base
   validate :period_and_groupname, on: :update
 
   def period_and_groupname
-    if (period.blank? || groupname.blank?)
-      errors.add(:base, 'Vul de periode en groepsnaam in.')
-    end
+    errors.add(:base, 'Vul de periode en groepsnaam in.') if period.blank? || groupname.blank?
   end
 end
