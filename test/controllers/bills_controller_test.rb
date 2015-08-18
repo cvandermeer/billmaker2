@@ -15,7 +15,7 @@ class BillsControllerTest < ActionController::TestCase
 
   test 'should be able to create bill' do
     assert_difference('Bill.count') do
-      post :create, bill: {name: @bill.name, period: @bill.period, groupname: @bill.groupname}
+      post :create, bill: { name: @bill.name, period: @bill.period, groupname: @bill.groupname }
     end
   end
 
