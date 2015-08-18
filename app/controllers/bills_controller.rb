@@ -10,8 +10,7 @@ class BillsController < ApplicationController
 
   def create
     @bill = Bill.new(bill_params)
-      redirect_to @bill if @bill.save
-    end
+    redirect_to @bill if @bill.save
   end
 
   private
