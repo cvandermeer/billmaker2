@@ -6,8 +6,21 @@
 
 <% if !(@bill.groupname && @bill.period) %>
   <%= form_for(@bill, remote: true) do |f| %>
-    <p><%= f.text_field :period %></p>
-    <p><%= f.text_field :groupname %></p>
-    <p><%= f.submit %></p>
+    <p><%= f.text_field :period, placeholder: 'Periode' %></p>
+    <p><%= f.text_field :groupname, placeholder: 'Groepsnaam' %></p>
+    <p><%= f.submit 'Rekening updaten', data: { disable_with: 'Rekening updaten...' } %></p>
   <% end %>
 <% end %>
+
+<p>Competenties:</p>
+<div class='competences'>
+  <% @bill.competences.each do |competence| %>
+    <p>
+      <%= competence.title %>
+      <%= competence.points %>
+      <%= competence.level %>
+    </p>
+  <% end %>
+</div>
+
+<%= render "competences/form", bill: @bill %>
