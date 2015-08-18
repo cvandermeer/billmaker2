@@ -20,6 +20,20 @@
       <%= competence.points %>
       <%= competence.level %>
     </p>
+    <p>Leerdoelen:</p>
+    <% competence.learning_goals.each do |learning_goal| %>
+      <div class='learning_goal'>
+        <p>
+          <%= learning_goal.goal %>
+        </p>
+        <p>
+          <%= learning_goal.learned %>
+        </p>
+      </div>
+    <% end %>
+    <p>
+      <%= render "learning_goals/form", competence: competence %>
+    </p>
   <% end %>
 </div>
 
