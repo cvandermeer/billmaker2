@@ -10,10 +10,7 @@ class BillsController < ApplicationController
 
   def create
     @bill = Bill.new(bill_params)
-    if @bill.save
-      redirect_to @bill
-    else
-      render :new
+      redirect_to @bill if @bill.save
     end
   end
 
