@@ -14,7 +14,7 @@ class BillsController < ApplicationController
   end
 
   def update
-    redirect_to @bill if @bill.update(bill_params)
+    render @bill if @bill.update(bill_params)
   end
 
   private
