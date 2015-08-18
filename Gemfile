@@ -14,7 +14,7 @@ group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
-  gem 'rubocop'
+  gem 'rubocop', require: false
   gem 'rails_best_practices'
   gem 'minitest-reporters'
   gem 'guard'
@@ -23,4 +23,6 @@ end
 
 group :test do
   gem 'simplecov', require: false
+  gem 'capybara'
+  gem 'launchy'
 end
