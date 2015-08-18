@@ -5,4 +5,5 @@ class LearningGoal < ActiveRecord::Base
   ### VALIDATIONS ###
   validates :goal, presence: true
   validates :learned, presence: true
+  validates :competence_id, presence: true
 end
