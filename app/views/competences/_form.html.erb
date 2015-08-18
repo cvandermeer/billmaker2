@@ -1,0 +1,7 @@
+<%= form_for Competence.new, remote: true do |f| %>
+  <%= f.hidden_field :bill_id, value: bill.id %>
+  <%= f.select :title, Competence::competences %>
+  <%= f.select :points, Competence::points_options %>
+  <%= f.select :level, Competence::levels %>
+  <%= f.submit 'Competentie toevoegen', data: { disable_with: 'Competentie toevoegen...' } %>
+<% end %>

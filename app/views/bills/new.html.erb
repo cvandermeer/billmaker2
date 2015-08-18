@@ -2,5 +2,5 @@
 <p>Heel simpel, vul hieronder je naam in en klik op start!</p>
 <%= form_for @bill do |f| %>
   <p><%= f.text_field :name %></p>
-  <p><%= f.submit %></p>
+  <p><%= f.submit 'Start', data: { disable_with: 'Rekening aanmaken...' } %></p>
 <% end %>
