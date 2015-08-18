@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150818104745) do
+ActiveRecord::Schema.define(version: 20150818105709) do
 
   create_table "bills", force: :cascade do |t|
     t.string   "name"
@@ -27,5 +27,7 @@ ActiveRecord::Schema.define(version: 20150818104745) do
     t.string  "level"
     t.integer "bill_id"
   end
+
+  add_index "competences", ["bill_id"], name: "index_competences_on_bill_id"
 
 end
