@@ -1,0 +1,6 @@
+<%= form_for LearningGoal.new, remote: true do |f| %>
+  <%= f.hidden_field :competence_id, value: bill.id %>
+  <%= f.select :goal, Competence::competences %>
+  <%= f.select :learned, Competence::points_options %>
+  <%= f.submit 'Leerdoel toevoegen', data: { disable_with: 'Leerdoel toevoegen...' } %>
+<% end %>
