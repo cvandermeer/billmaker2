@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset='utf-8' />
-    <%#= wicked_pdf_stylesheet_link_tag "pdf" -%>
+    <%= wicked_pdf_stylesheet_link_tag 'pdf' -%>
     <%#= wicked_pdf_javascript_include_tag "number_pages" %>
   </head>
   <body onload='number_pages'>
@@ -10,11 +10,21 @@
       <%#= wicked_pdf_image_tag 'mysite.jpg' %>
     </div>
     <div id="content">
-      <p id='name'><%= @bill.name %></p>
-      <p id='period'><%= @bill.period %></p>
-      <p id='groupname'><%= @bill.groupname %></p>
-
+      <h1>Rekening van <%= @bill.name %></h1>
+      <div class='author'>
+        <p><%= @bill.period %></p>
+      <p><%= @bill.groupname %></p>
+      </div>
+      <p style='page-break-after:always;padding-bottom:30px;'></p>
       <p>Competenties:</p>
+      <ul>
+        <% competence_count = 0 %>
+        <% @bill.competences.each do |competence| %>
+          <li><%= competence.title %> <%= competence.points %> <%= competence.level %></li>
+          <% competence_count = competence_count + competence.points %>
+        <% end %>
+      </ul>
+      <p>Totaal aantal punten: <%= competence_count %></p>
       <div class='competences'>
         <% @bill.competences.each do |competence| %>
           <p style='page-break-after:always;padding-bottom:30px;'></p>
