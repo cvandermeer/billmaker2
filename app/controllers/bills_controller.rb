@@ -2,6 +2,12 @@ class BillsController < ApplicationController
   before_action :set_bill, only: [:show, :update]
 
   def show
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: 'Rekening-van-' + @bill.name
+      end
+    end
   end
 
   def new

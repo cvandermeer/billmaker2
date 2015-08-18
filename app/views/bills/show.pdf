@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <%#= wicked_pdf_stylesheet_link_tag "pdf" -%>
+    <%#= wicked_pdf_javascript_include_tag "number_pages" %>
+  </head>
+  <body onload='number_pages'>
+    <div id="header">
+      <%#= wicked_pdf_image_tag 'mysite.jpg' %>
+    </div>
+    <div id="content">
+      <p id='name'><%= @bill.name %></p>
+      <p id='period'><%= @bill.period %></p>
+      <p id='groupname'><%= @bill.groupname %></p>
+
+      <p>Competenties:</p>
+      <div class='competences'>
+        <% @bill.competences.each do |competence| %>
+          <div class='competence'>
+            <h2 class='competence_info'><%= competence.title %> <%= competence.points %> <%= competence.level %></h2>
+            <p>Leerdoelen:</p>
+            <div class='learning_goals'>
+              <% competence.learning_goals.each do |learning_goal| %>
+                <div class='learning_goal'>
+                  <p>
+                    <%= learning_goal.goal %>
+                  </p>
+                  <p>
+                    <%= learning_goal.learned %>
+                  </p>
+                </div>
+              <% end %>
+            </div>
+          </div>
+          <p style='page-break-after:always;padding-bottom:30px;'></p>
+        <% end %>
+      </div>
+    </div>
+  </body>
+</html>
