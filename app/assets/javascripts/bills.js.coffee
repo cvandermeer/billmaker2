@@ -1,4 +1,5 @@
 $ ->
+  $('#bill_name').focus()
   $('#new_bill').on('ajax:success', (e, data, status, xhr) ->
     $('body').append xhr.responseText
     $('#new_bill').hide()
