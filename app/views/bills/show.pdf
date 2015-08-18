@@ -9,7 +9,7 @@
     <div id="header">
       <%#= wicked_pdf_image_tag 'mysite.jpg' %>
     </div>
-    <div id="content">
+    <div id="bill_content">
       <h1>Rekening van <%= @bill.name %></h1>
       <div class='author'>
         <p><%= @bill.period %></p>
