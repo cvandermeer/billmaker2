@@ -17,3 +17,10 @@ Features:
 Features:
 
 - 3: Create learning goals on competence
+
+## Release 1.2.1
+
+Bugs:
+
+- Ajax append repsonse fix
+
