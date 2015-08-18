@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150818112440) do
+ActiveRecord::Schema.define(version: 20150818131759) do
 
   create_table "bills", force: :cascade do |t|
     t.string   "name"
@@ -35,5 +35,7 @@ ActiveRecord::Schema.define(version: 20150818112440) do
     t.text    "learned"
     t.integer "competence_id"
   end
+
+  add_index "learning_goals", ["competence_id"], name: "index_learning_goals_on_competence_id"
 
 end
