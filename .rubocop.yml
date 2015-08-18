@@ -3,6 +3,7 @@ AllCops:
   Exclude:
     - 'vendor/**/*'
     - 'bin/**/*'
+    - 'db/**/*'
     - 'test/test_helper.rb'
     - 'Guardfile'
 Documentation:
