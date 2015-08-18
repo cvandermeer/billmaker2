@@ -4,4 +4,4 @@ rvm:
 script:
  - 'bundle exec rails_best_practices'
  - 'bundle exec rubocop'
- - 'rake'
+ - 'bundle exec rake'
