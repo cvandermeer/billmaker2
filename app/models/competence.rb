@@ -16,6 +16,7 @@ class Competence < ActiveRecord::Base
 
   ### ASSOCIATIONS ###
   belongs_to :bill
+  has_many :learning_goals
 
   ### VALIDATIONS ###
   validates :title, presence: true

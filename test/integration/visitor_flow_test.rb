@@ -22,7 +22,7 @@ class VisitorFlowTest < ActionDispatch::IntegrationTest
     select(6, from: 'competence_points')
     select('Gevorderd', from: 'competence_level')
     click_button 'Competentie toevoegen'
-    assert_selector '.competence', text: 'Concepting 6 Gevorderd'
+    assert_selector '.competence_info', text: 'Concepting 6 Gevorderd'
   end
 
   private

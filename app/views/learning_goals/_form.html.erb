@@ -1,0 +1,6 @@
+<%= form_for LearningGoal.new, remote: true do |f| %>
+  <%= f.hidden_field :competence_id, value: competence.id %>
+  <p><%= f.text_field :goal, placeholder: 'Leerdoel' %></p>
+  <p><%= f.text_area :learned, placeholder: 'Hoe heb ik dit geleerd?' %></p>
+  <p><%= f.submit 'Leerdoel toevoegen', data: { disable_with: 'Leerdoel toevoegen...' } %></p>
+<% end %>
