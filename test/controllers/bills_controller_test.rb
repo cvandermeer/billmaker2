@@ -32,6 +32,6 @@ class BillsControllerTest < ActionController::TestCase
   private
 
   def initialize_bill
-    @bill = bills(:one)
+    @bill = bills(:bill1)
   end
 end

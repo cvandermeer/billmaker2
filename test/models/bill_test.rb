@@ -26,7 +26,7 @@ class BillTest < ActiveSupport::TestCase
   private
 
   def initialize_bill
-    @bill1 = bills(:one)
-    @bill2 = bills(:two)
+    @bill1 = bills(:bill1)
+    @bill2 = bills(:bill2)
   end
 end
