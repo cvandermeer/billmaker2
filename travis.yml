@@ -2,6 +2,6 @@ language: ruby
 rvm:
  - '2.1.5'
 script:
- - 'bundle exec rails_best_practices'
- - 'bundle exec rubocop'
  - 'bundle exec rake'
+ - 'bundle exec rubocop'
+ - 'bundle exec rails_best_practices'
