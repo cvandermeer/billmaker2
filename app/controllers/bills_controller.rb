@@ -14,7 +14,7 @@ class BillsController < ApplicationController
   end
 
   def update
-    render @bill if @bill.update(bill_params)
+    render @bill, bill: @bill if @bill.update(bill_params)
   end
 
   private

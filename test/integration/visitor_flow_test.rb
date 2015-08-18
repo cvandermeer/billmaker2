@@ -30,7 +30,7 @@ class VisitorFlowTest < ActionDispatch::IntegrationTest
     fill_in('learning_goal_learned', with: @learning_goal.learned)
     click_button 'Leerdoel toevoegen'
     visit url
-    assert_selector '.learning_goal', text: 'Ik wil leren hoe ik de apa normering toe kan passen Ik heb dit geleerd door het te proberen op de bronnenlijst van het projectrapport'
+    assert_selector '.learning_goal', text: @learning_goal.goal + ' ' + @learning_goal.learned
   end
 
   private
