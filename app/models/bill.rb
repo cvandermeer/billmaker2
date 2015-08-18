@@ -1,5 +1,11 @@
 class Bill < ActiveRecord::Base
-  validates :name,       presence: true
-  validates :period,     presence: true
-  validates :groupname,  presence: true
+  ### VALIDATIONS ###
+  validates :name, presence: true
+  validate :period_and_groupname, on: :update
+
+  def period_and_groupname
+    if (period.blank? || groupname.blank?)
+      errors.add(:base, 'Vul de periode en groepsnaam in.')
+    end
+  end
 end

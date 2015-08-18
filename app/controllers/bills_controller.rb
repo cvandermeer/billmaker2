@@ -1,5 +1,5 @@
 class BillsController < ApplicationController
-  before_action :set_bill, only: :show
+  before_action :set_bill, only: [:show, :update]
 
   def show
   end
@@ -10,7 +10,17 @@ class BillsController < ApplicationController
 
   def create
     @bill = Bill.new(bill_params)
-    redirect_to @bill if @bill.save
+    if @bill.save
+      redirect_to @bill
+    else
+      render :new, alert: 'Er is iets misgegaan.'
+    end
+  end
+
+  def update
+    if @bill.update(bill_params)
+      redirect_to @bill
+    end
   end
 
   private

@@ -1,8 +1,8 @@
 $ ->
   $('#bill_name').focus()
-  $('#new_bill').on('ajax:success', (e, data, status, xhr) ->
-    $('body').append xhr.responseText
-    $('#new_bill').hide()
-    $('#guide').html('Goedzo, de volgende stap is de competenties toevoegen')
+  $('#bill_period').focus()
+  $('.edit_bill').on('ajax:success', (e, data, status, xhr) ->
+    $('body').html(xhr.responseText)
+    $('.edit_bill').hide()
   ).on 'ajax:error', (e, xhr, status, error) ->
-    $('#new_bill').append '<p>ERROR</p>'
+    $('.edit_bill').append '<p>Vul alle waarden in!</p>'
