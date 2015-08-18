@@ -15,22 +15,24 @@
 <p>Competenties:</p>
 <div class='competences'>
   <% @bill.competences.each do |competence| %>
-    <p>
+    <h2>
       <%= competence.title %>
       <%= competence.points %>
       <%= competence.level %>
-    </p>
+    </h2>
     <p>Leerdoelen:</p>
-    <% competence.learning_goals.each do |learning_goal| %>
-      <div class='learning_goal'>
-        <p>
-          <%= learning_goal.goal %>
-        </p>
-        <p>
-          <%= learning_goal.learned %>
-        </p>
-      </div>
-    <% end %>
+    <div class='learning_goals'>
+      <% competence.learning_goals.each do |learning_goal| %>
+        <div class='learning_goal'>
+          <p>
+            <%= learning_goal.goal %>
+          </p>
+          <p>
+            <%= learning_goal.learned %>
+          </p>
+        </div>
+      <% end %>
+    </div>
     <p>
       <%= render "learning_goals/form", competence: competence %>
     </p>
