@@ -8,7 +8,7 @@ class BillTest < ActiveSupport::TestCase
     @bill2 = nil
   end
 
-  test 'should not create bill without name' do
+  test 'should not create bill without any input' do
     bill = Bill.new
     assert_not bill.save, 'Saved a bill without name!'
   end
