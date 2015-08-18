@@ -3,6 +3,11 @@ require 'test_helper'
 class BillsControllerTest < ActionController::TestCase
   setup :set_bill
 
+  test 'should show bill' do
+    get :show, id: @bill
+    assert_response :success
+  end
+
   test 'should get new' do
     get :new
     assert_response :success
