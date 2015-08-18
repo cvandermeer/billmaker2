@@ -1,9 +1,8 @@
-<h1>Tadaa</h1>
-<p>Kijk dat is al een begin, vul nu de rest van de informatie in.</p>
+<p>Kijk <%= @bill.name %> dat is al een begin, vul nu de rest van de informatie in.</p>
 
 <p id='name'><%= @bill.name %></p>
-<p><%= @bill.period %></p>
-<p><%= @bill.groupname %></p>
+<p id='period'><%= @bill.period %></p>
+<p id='groupname'><%= @bill.groupname %></p>
 
 <% if !(@bill.groupname && @bill.period) %>
   <%= form_for(@bill, remote: true) do |f| %>

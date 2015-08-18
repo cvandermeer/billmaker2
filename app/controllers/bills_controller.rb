@@ -12,8 +12,6 @@ class BillsController < ApplicationController
     @bill = Bill.new(bill_params)
     if @bill.save
       redirect_to @bill
-    else
-      render :new, alert: 'Er is iets misgegaan.'
     end
   end
 

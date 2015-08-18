@@ -1,8 +1,15 @@
 require 'test_helper'
 
-class BillFlowTest < ActionDispatch::IntegrationTest
-  test 'should see the welcome page' do
-    get '/'
-    assert_select 'h1', 'Hoe maak je nou een rekening?'
+class VisitorFlowTest < ActionDispatch::IntegrationTest
+  setup :initialize_bill
+
+  def teardown
+    @bill = nil
+  end
+
+  private
+
+  def initialize_bill
+    @bill = bills(:one)
   end
 end
