@@ -26,7 +26,7 @@ class BillsControllerTest < ActionController::TestCase
 
   test 'should update bill' do
     patch :update, id: @bill.id, bill: { period: @bill.period, groupname: @bill.groupname }
-    assert_redirected_to bill_path(assigns(:bill))
+    assert_template partial: '_bill'
   end
 
   private
