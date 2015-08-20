@@ -13,7 +13,7 @@
       <h1>Rekening van <%= @bill.name %></h1>
       <div class='author'>
         <p><%= @bill.period %></p>
-      <p><%= @bill.groupname %></p>
+        <p><%= @bill.groupname %></p>
       </div>
       <p style='page-break-after:always;padding-bottom:30px;'></p>
       <p>Competenties:</p>

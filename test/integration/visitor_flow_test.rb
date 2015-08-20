@@ -31,6 +31,17 @@ class VisitorFlowTest < ActionDispatch::IntegrationTest
     click_button 'Leerdoel toevoegen'
     visit url
     assert_selector '.learning_goal', text: @learning_goal.goal + ' ' + @learning_goal.learned
+    assert_selector 'a', text: 'Genereer PDF'
+    click_link 'Genereer PDF'
+    status_code.must_equal 200
+  end
+
+  def covert_pdf_to_page
+    temp_pdf = Temfile.new('pdf')
+    temp_pdf << page.source.force_encoding('UTF-8')
+    reader = PDF::Reader.new(temp_pdf)
+    pdf_text = reader.pages.map(&:text)
+    page.driver.response.instance_variable_set('@body', pdf_text)
   end
 
   private
