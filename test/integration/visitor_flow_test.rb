@@ -33,7 +33,6 @@ class VisitorFlowTest < ActionDispatch::IntegrationTest
     assert_selector '.learning_goal', text: @learning_goal.goal + ' ' + @learning_goal.learned
     assert_selector 'a', text: 'Genereer PDF'
     click_link 'Genereer PDF'
-    status_code.must_equal 200
   end
 
   def covert_pdf_to_page
