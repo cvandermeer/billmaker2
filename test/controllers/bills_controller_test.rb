@@ -12,6 +12,13 @@ class BillsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  if Rails.env.development?
+    test 'should generate bill pdf' do
+      get :show, id: @bill, format: 'pdf'
+      assert_response :success
+    end
+  end
+
   test 'should get new' do
     get :new
     assert_response :success
