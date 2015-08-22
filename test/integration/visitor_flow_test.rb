@@ -32,7 +32,7 @@ class VisitorFlowTest < ActionDispatch::IntegrationTest
     visit url
     assert_selector '.learning_goal', text: @learning_goal.goal + ' ' + @learning_goal.learned
     assert_selector 'a', text: 'Genereer PDF'
-    click_link 'Genereer PDF'
+    click_link 'Genereer PDF' if Rails.env.development?
   end
 
   def covert_pdf_to_page
