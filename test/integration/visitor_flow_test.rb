@@ -31,8 +31,28 @@ class VisitorFlowTest < ActionDispatch::IntegrationTest
     click_button 'Leerdoel toevoegen'
     visit url
     assert_selector '.learning_goal', text: @learning_goal.goal + ' ' + @learning_goal.learned
-    assert_selector 'a', text: 'Genereer PDF'
-    click_link 'Genereer PDF' if Rails.env.development?
+  end
+
+  test 'should delete competence' do
+    visit('/')
+    fill_in('bill_name', with: @bill.name)
+    click_button 'Start'
+    assert_selector '#name', text: @bill.name
+    fill_in('bill_period', with: @bill.period)
+    fill_in('bill_groupname', with: @bill.groupname)
+    url = URI.parse(current_url)
+    click_button 'Rekening updaten'
+    visit url
+    assert_selector '#period', text: @bill.period
+    assert_selector '#groupname', text: @bill.groupname
+    select('Concepting', from: 'competence_title')
+    select(6, from: 'competence_points')
+    select('Gevorderd', from: 'competence_level')
+    click_button 'Competentie toevoegen'
+    visit url
+    click_link 'X'
+    visit url
+    assert_no_selector 'competence'
   end
 
   def covert_pdf_to_page
