@@ -14,6 +14,7 @@ class BillsControllerTest < ActionController::TestCase
 
   test 'should generate bill pdf' do
     get :show, id: @bill, format: 'pdf'
+    assert_response :success
   end
 
   test 'should get new' do
