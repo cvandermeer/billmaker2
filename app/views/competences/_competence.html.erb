@@ -1,17 +1,22 @@
-<h2 class='competence_info'><%= competence.title %> <%= competence.points %> <%= competence.level %></h2>
-<p>Leerdoelen:</p>
-<div class='learning_goals'>
-  <% competence.learning_goals.each do |learning_goal| %>
-    <div class='learning_goal'>
-      <p>
-        <%= learning_goal.goal %>
-      </p>
-      <p>
-        <%= learning_goal.learned %>
-      </p>
-    </div>
-  <% end %>
+<div class='competence'>
+  <h2 class='competence_info'>
+    <%= competence.title %> <%= competence.points %> <%= competence.level %>
+    <%= link_to 'X', competence, method: :delete,
+    data: { confirm: 'Weet je zeker dat je deze competentie wilt verwijderen?'},
+    remote: true, class: 'destroy_competence' %>
+  </h2>
+  <p>Leerdoelen:</p>
+  <div class='learning_goals'>
+    <% competence.learning_goals.each do |learning_goal| %>
+      <div class='learning_goal'>
+        <p>
+          <%= learning_goal.goal %>
+        </p>
+        <p>
+          <%= learning_goal.learned %>
+        </p>
+      </div>
+    <% end %>
+  </div>
 </div>
-<p>
-  <%= render "learning_goals/form", competence: competence %>
-</p>
+<p><%= render "learning_goals/form", competence: competence %></p>
