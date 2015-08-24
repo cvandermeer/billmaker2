@@ -19,6 +19,7 @@ group :development, :test do
   gem 'rubocop', require: false
   gem 'rails_best_practices'
   gem 'minitest-reporters'
+  gem 'minitest-rails'
   gem 'guard'
   gem 'guard-minitest'
 end

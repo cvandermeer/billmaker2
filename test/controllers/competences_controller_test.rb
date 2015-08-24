@@ -16,6 +16,12 @@ class CompetencesControllerTest < ActionController::TestCase
     end
   end
 
+  test 'should destroy competence' do
+    assert_difference('Competence.count', -1) do
+      delete :destroy, id: @competence.id
+    end
+  end
+
   private
 
   def initialize_competence
