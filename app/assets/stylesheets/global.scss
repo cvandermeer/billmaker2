@@ -26,6 +26,15 @@
   }
 }
 
+.new_bill, .edit_bill{
+  input{
+    width:100%;
+  }
+  textarea{
+    width:100%;
+  }
+}
+
 .goal{
   font-size:30px;
 }
