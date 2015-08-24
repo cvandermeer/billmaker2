@@ -12,7 +12,7 @@ class BillsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  unless ENV['SKIP_PDF_TEST']
+  unless ENV['SKIP_PDF_TESTS']
     test 'should generate bill pdf' do
       get :show, id: @bill, format: 'pdf'
       assert_response :success
