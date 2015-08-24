@@ -9,6 +9,8 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 
 group :development, :test do
   gem 'byebug'
@@ -17,6 +19,7 @@ group :development, :test do
   gem 'rubocop', require: false
   gem 'rails_best_practices'
   gem 'minitest-reporters'
+  gem 'minitest-rails'
   gem 'guard'
   gem 'guard-minitest'
 end

@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <%= wicked_pdf_stylesheet_link_tag 'application' -%>
+    <%= wicked_pdf_stylesheet_link_tag 'pdf' -%>
+  </head>
+  <body onload='number_pages'>
+    <div class='container'>
+      <div id="bill_content">
+        <p class='h1'>Rekening van <%= @bill.name %></h1>
+        <div class='author'>
+          <p><%= @bill.period %></p>
+          <p><%= @bill.groupname %></p>
+        </div>
+        <p style='page-break-after:always;padding-bottom:30px;'></p>
+        <p class='h1'>Competenties:</p>
+        <ul>
+          <% competence_count = 0 %>
+          <% @bill.competences.each do |competence| %>
+            <li><%= competence.title %> <%= competence.points %> <%= competence.level %></li>
+            <% competence_count = competence_count + competence.points %>
+          <% end %>
+        </ul>
+        <p>Totaal aantal punten: <%= competence_count %></p>
+        <div class='competences'>
+          <% @bill.competences.each do |competence| %>
+            <p style='page-break-after:always;padding-bottom:30px;'></p>
+            <div class='competence'>
+              <p class='competence_info h1'><%= competence.title %> <%= competence.points %> <%= competence.level %></p>
+              <div class='learning_goals'>
+                <% competence.learning_goals.each do |learning_goal| %>
+                  <div class='learning_goal'>
+                    <p class='goal'>
+                      <%= learning_goal.goal %>
+                    </p>
+                    <p class='learned'>
+                      <%= learning_goal.learned %>
+                    </p>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
