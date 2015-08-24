@@ -1,3 +1,43 @@
 .learning_goal{
-  border:1px solid black;
+  border-bottom:1px solid black;
+}
+
+.learning_goal:last-child{
+  border-bottom:0;
+}
+
+#header{
+  text-align: center;
+  background-color: #33c3f0;
+  padding: 10px;
+  color: #FFF;
+}
+
+.destroy_competence{
+  text-decoration: none;
+}
+
+.new_learning_goal{
+  input, textarea{
+    width:100%;
+  }
+  textarea{
+    height:200px;
+  }
+}
+
+.new_bill, .edit_bill{
+  input{
+    width:100%;
+  }
+  textarea{
+    width:100%;
+  }
+}
+
+.goal{
+  font-size:30px;
+}
+.goal, .learned{
+  margin-left:10px;
 }

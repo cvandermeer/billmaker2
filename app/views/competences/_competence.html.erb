@@ -8,15 +8,8 @@
   <p>Leerdoelen:</p>
   <div class='learning_goals'>
     <% competence.learning_goals.each do |learning_goal| %>
-      <div class='learning_goal'>
-        <p>
-          <%= learning_goal.goal %>
-        </p>
-        <p>
-          <%= learning_goal.learned %>
-        </p>
-      </div>
+      <%= render 'learning_goals/learning_goal', learning_goal: learning_goal %>
     <% end %>
   </div>
-  <p><%= render "learning_goals/form", competence: competence %></p>
+  <p><%= render 'learning_goals/form', competence: competence %></p>
 </div>
