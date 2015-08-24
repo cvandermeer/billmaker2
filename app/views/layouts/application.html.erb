@@ -8,10 +8,15 @@
   </head>
   <body>
     <header>
-      Rekening Maker <%= Billmaker::VERSION %>
+      <h1 id='header'>Rekening Maker <%= Billmaker::VERSION %></h1>
     </header>
+
     <p class='notice'><%= notice %></p>
     <p class='alert'><%= alert %></p>
-    <%= yield %>
+
+    <div class='container'>
+      <%= yield %>
+    </div>
+
   </body>
 </html>

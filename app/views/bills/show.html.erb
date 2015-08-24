@@ -17,7 +17,6 @@
 <div class='competences'>
   <% @bill.competences.each do |competence| %>
     <%= render 'competences/competence', competence: competence %>
-    </div>
   <% end %>
   <%= render "competences/form", bill: @bill %>
 </div>
